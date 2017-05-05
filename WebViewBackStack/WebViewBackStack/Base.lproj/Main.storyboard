@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="cfv-vu-wHd">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="fw7-zv-50r">
+            <objects>
+                <navigationController id="cfv-vu-wHd" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="D1y-Xj-2qm">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="th1-ew-BXd" kind="relationship" relationship="rootViewController" id="gk7-gU-ZfZ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0de-KF-mTc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-652" y="178"/>
+        </scene>
+        <!--webView回退栈-->
+        <scene sceneID="ffs-KZ-L9d">
+            <objects>
+                <viewController id="th1-ew-BXd" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="rck-5U-Jyd"/>
+                        <viewControllerLayoutGuide type="bottom" id="lpV-bl-Rtx"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="n2y-JR-3Lh">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2De-XM-b5i">
+                                <rect key="frame" x="156" y="168.5" width="62" height="30"/>
+                                <state key="normal" title="未作处理"/>
+                                <connections>
+                                    <segue destination="Y8D-LA-4cR" kind="push" id="hwt-k3-Tva"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hyu-T0-nHa">
+                                <rect key="frame" x="141" y="268.5" width="92" height="30"/>
+                                <state key="normal" title="处理回退栈后"/>
+                                <connections>
+                                    <segue destination="YG7-nf-x9Y" kind="push" id="cLh-Cw-1wu"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="2De-XM-b5i" firstAttribute="centerX" secondItem="n2y-JR-3Lh" secondAttribute="centerX" id="56J-Vf-fBn"/>
+                            <constraint firstItem="2De-XM-b5i" firstAttribute="centerY" secondItem="n2y-JR-3Lh" secondAttribute="centerY" constant="-150" id="FDh-hc-WDf"/>
+                            <constraint firstItem="hyu-T0-nHa" firstAttribute="centerX" secondItem="n2y-JR-3Lh" secondAttribute="centerX" id="H9r-qq-gsW"/>
+                            <constraint firstItem="hyu-T0-nHa" firstAttribute="centerY" secondItem="n2y-JR-3Lh" secondAttribute="centerY" constant="-50" id="kAk-pX-1ql"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="webView回退栈" id="iXS-1Q-iX6"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Bet-K5-RmC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="148" y="153"/>
+        </scene>
+        <!--处理后-->
+        <scene sceneID="eBC-DJ-DXX">
+            <objects>
+                <viewController id="YG7-nf-x9Y" customClass="SecondViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="oZC-2t-xec"/>
+                        <viewControllerLayoutGuide type="bottom" id="7pJ-3Z-2UF"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="WX3-Qr-6G4">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6PY-xZ-fiI">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="6PY-xZ-fiI" secondAttribute="trailing" id="9ce-Cc-llP"/>
+                            <constraint firstItem="6PY-xZ-fiI" firstAttribute="leading" secondItem="WX3-Qr-6G4" secondAttribute="leading" id="JJE-4u-UDR"/>
+                            <constraint firstItem="6PY-xZ-fiI" firstAttribute="top" secondItem="oZC-2t-xec" secondAttribute="bottom" constant="-64" id="KVB-bW-KoG"/>
+                            <constraint firstItem="7pJ-3Z-2UF" firstAttribute="top" secondItem="6PY-xZ-fiI" secondAttribute="bottom" id="TMP-vP-DIo"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="处理后" id="rbE-iT-Xx3">
+                        <barButtonItem key="leftBarButtonItem" title="返回" id="CkK-jm-k64">
+                            <connections>
+                                <action selector="onClickBack:" destination="YG7-nf-x9Y" id="Ag8-3O-86n"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="webView" destination="6PY-xZ-fiI" id="Z8r-Pr-IGe"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Mgj-UG-Zcl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1134" y="650"/>
+        </scene>
+        <!--未处理-->
+        <scene sceneID="n1D-XS-MDr">
+            <objects>
+                <viewController id="Y8D-LA-4cR" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="JrC-b0-I5o"/>
+                        <viewControllerLayoutGuide type="bottom" id="krB-6H-iY7"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Syn-HW-Jmd">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DAs-5K-dZZ">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="DAs-5K-dZZ" firstAttribute="leading" secondItem="Syn-HW-Jmd" secondAttribute="leading" id="GeC-5W-rYD"/>
+                            <constraint firstAttribute="trailing" secondItem="DAs-5K-dZZ" secondAttribute="trailing" id="ZUS-OC-XNd"/>
+                            <constraint firstItem="DAs-5K-dZZ" firstAttribute="top" secondItem="JrC-b0-I5o" secondAttribute="bottom" constant="-64" id="mCx-hN-nzt"/>
+                            <constraint firstItem="krB-6H-iY7" firstAttribute="top" secondItem="DAs-5K-dZZ" secondAttribute="bottom" id="uSB-Ao-Bs0"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="未处理" id="FsT-y1-6mO">
+                        <barButtonItem key="leftBarButtonItem" title="返回" id="QOM-BC-0HW">
+                            <connections>
+                                <action selector="onClickBack:" destination="Y8D-LA-4cR" id="dcN-eV-Fdb"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="webView" destination="DAs-5K-dZZ" id="6u6-3a-iac"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mzF-0N-6nw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1134" y="-19"/>
+        </scene>
+    </scenes>
+</document>
