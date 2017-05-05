@@ -26,11 +26,11 @@ iOS webView 回退栈     webView内部跳转和原生跳转两不误
 ```
 if ([self.webView canGoBack]) 
 {   // webView本身回退 
-[self.webView goBack];
+    [self.webView goBack];
 }
 else 
 {   // 原生回退
-[self dismissCurrentAnimated:YES];
+    [self dismissCurrentAnimated:YES];
 }
 ```
 
